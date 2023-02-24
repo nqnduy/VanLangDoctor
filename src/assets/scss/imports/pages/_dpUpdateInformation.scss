@@ -1,0 +1,36 @@
+.changePasswordUpdateInformation {
+   .wrapMain {
+      .content {
+         height: max-content;
+         width: 100%;
+         position: relative;
+         display: flex;
+         & > span {
+            padding: 40px 30px;
+            background-color: white;
+            width: 64%;
+         }
+         .formChangePassword {
+            width: 36%;
+            height: fit-content;
+            margin-left: 20px;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            justify-content: center;
+         }
+         .formUpdate {
+            .informUpdate {
+               justify-content: space-between;
+               align-items: flex-start;
+               .upLoadAvtGroup {
+                  width: 30%;
+                  &__img {
+                     @include size(200px);
+                  }
+               }
+            }
+         }
+      }
+   }
+}

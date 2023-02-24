@@ -1,0 +1,10 @@
+{
+    "name": "frontend",
+    "version": "0.1.0",
+    "dependencies": {
+        "core-js": { "version": "3.19.1" },
+        "vue": { "version": "2.6.14" },
+        "vue-router": { "version": "3.5.3" },
+        "vuex": { "version": "3.6.2" }
+    }
+}

@@ -1,0 +1,52 @@
+.adminCreateAccount, .adminUpdateAccount, .adminCreateMedicine, .adminUpdateMedicine {
+   .wrapMain {
+      .content {
+         height: max-content;
+         width: 100%;
+         position: relative;
+         background-color: white;
+         .formUpdate {
+            width: 100%;
+            align-items: center;
+            .informUpdate {
+               padding: 60px 30px 40px 30px;
+               align-items: center;
+               width: 100%;
+               justify-content: center;
+               flex-direction: column;
+               .upLoadAvtGroup {
+                  width: 30%;
+                  margin-bottom: 50px;
+                  &__img {
+                     @include size(200px);
+                  }
+               }
+               .inputGroup {
+                  margin-bottom: 20px;
+                  display: flex;
+                  align-items: flex-start;
+                  .text-field {
+                     #dateOfBirth {
+                        padding: 14.8px 18px;
+                     }
+                  }
+                  .warningAPI{
+                     display: flex;
+                     align-items: flex-start;
+                     gap: 10px;
+                     margin-left: 20px;
+                     margin-top: 30px;
+                     font-family: GR;
+                     font-size: 13px;
+                     width: 25vw;
+                  }
+               }
+            }
+         }
+      }
+   }
+   h2 {
+      font-family: GR-B;
+      font-size: 20px;
+   }
+}

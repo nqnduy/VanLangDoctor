@@ -1,0 +1,74 @@
+.register,
+.login {
+   width: 100%;
+   height: calc(100vh - var(--heightHeader));
+   overflow-x: hidden;
+   display: flex;
+   position: relative;
+   .AccessForm {
+      position: relative;
+      height: 100%;
+      padding-inline: 50px;
+      margin-top: 120px;
+      margin-left: var(--marginFakeContainer);
+      padding-left: var(--paddingFakeContainer);
+      width: 60%;
+   }
+}
+.inform {
+   width: 80%;
+   padding-inline: 50px;
+}
+.AccessForm {
+   font-family: GR-M;
+   img {
+      width: 372px;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+      margin-bottom: 30px;
+   }
+   p {
+      font-size: 16px;
+      letter-spacing: 0.01em;
+      text-align: center;
+      margin-bottom: 30px;
+      a {
+         color: $primary2-cl;
+         text-decoration: underline;
+      }
+   }
+   input {
+      margin: 0 auto;
+      margin-bottom: 7px;
+      margin-top: 15px;
+   }
+   span {
+      font-size: 14px;
+      left: 0;
+      color: #e45858;
+      .errors {
+         margin-left: 20px;
+      }
+   }
+   .warningPT {
+      display: block;
+      font-size: 14px;
+      margin-bottom: 40px;
+      text-align: center;
+      color: black;
+      margin-top: 20px;
+      b {
+         font-family: GR-SB;
+         color: $primary2-cl;
+      }
+   }
+   .emailConfirm {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      span {
+         flex-grow: 1;
+      }
+   }
+}

@@ -1,0 +1,500 @@
+.dpCustomerInformation {
+   .wrapMain {
+      .content {
+      }
+   }
+   &__totalInfo {
+      display: flex;
+      flex-direction: row;
+      margin-bottom: 10px;
+      &-left {
+         width: 30%;
+         background-color: #fff;
+         margin-right: 10px;
+         padding: 20px;
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+         justify-content: center;
+         border-top-left-radius: 10px;
+         .avt {
+            position: relative;
+            overflow: hidden;
+            border-radius: 50%;
+            width: 140px;
+            height: 140px;
+            img {
+               @include mid(false);
+               min-width: 100%;
+               min-height: 100%;
+               object-fit: cover;
+            }
+         }
+         .name {
+            font-family: GR-B;
+            font-size: 24px;
+            letter-spacing: 0.005em;
+            margin: 10px 0;
+         }
+         .email {
+            font-family: GR-SB;
+            font-size: 15px;
+            color: #666;
+         }
+      }
+      &-right {
+         width: 70%;
+         background-color: #fff;
+         display: grid;
+         grid-template-columns: repeat(3, 1fr);
+         justify-self: center;
+         row-gap: 60px;
+         margin: 0 auto;
+         padding: 50px 40px;
+         border-top-right-radius: 10px;
+         .wrapTextInfo {
+            font-size: 18px;
+            &__title {
+               font-family: GR-B;
+               color: #666;
+               letter-spacing: -0.01em;
+               margin-bottom: 15px;
+            }
+            &__value {
+               font-family: GR-SB;
+               color: #333;
+               letter-spacing: -0.005em;
+            }
+         }
+      }
+   }
+   &__profileConsultation {
+      background-color: white;
+      padding: 50px 20px;
+      border-bottom-left-radius: 10px;
+      border-bottom-right-radius: 10px;
+      &-title {
+         margin: 0 0 30px 10px;
+         font-size: 18px;
+         font-family: GR-B;
+      }
+      &-table {
+         padding: 0px 5px 10px 5px;
+         .consultationList {
+            background-color: $bg-management-cl;
+            padding: 15px 30px 30px 80px;
+            min-height: 40vh;
+            max-height: 40vh;
+            position: relative;
+            overflow-y: scroll;
+            @include customscroll(0px, transparent, transparent);
+            &__item > div {
+               padding: 30px 20px;
+               margin-block: 15px;
+               display: grid;
+               grid-template-columns: 20% 47% 20% 18%;
+               position: relative;
+               @include transition(0.4s ease-out);
+               background-color: white;
+               &:before {
+                  position: absolute;
+                  content: "";
+                  z-index: 12;
+                  background-color: white;
+                  border: 2px solid $primary2-cl;
+                  width: 12px;
+                  height: 12px;
+                  border-radius: 50%;
+                  left: -3.2%;
+                  top: 50%;
+                  @include transform(translateY(-50%));
+               }
+               &:after {
+                  position: absolute;
+                  z-index: 10;
+                  content: "";
+                  background-color: $primary-cl;
+                  width: 2px;
+                  height: 200%;
+                  top: -48px;
+                  left: calc(-3.5% + 7px);
+               }
+               &:first-child {
+                  &:before {
+                     background-color: $primary2-cl;
+                  }
+               }
+            }
+            &__item {
+               &-dateTime {
+                  position: relative;
+                  font-family: GR-B;
+                  .date {
+                     font-size: 16px;
+                     margin-bottom: 10px;
+                  }
+                  .time {
+                     text-transform: uppercase;
+                     font-size: 14px;
+                     color: rgba(0, 0, 0, 0.5);
+                  }
+                  &:after {
+                     position: absolute;
+                     content: "";
+                     width: 2px;
+                     height: 90%;
+                     background-color: rgba(0, 0, 0, 0.25);
+                     right: 25%;
+                     top: 50%;
+                     @include transform(translateY(-50%));
+                  }
+               }
+               .title {
+                  font-family: GR-B;
+                  font-size: 16px;
+                  color: rgba(0, 0, 0, 0.5);
+                  margin-bottom: 10px;
+               }
+               .detail {
+                  font-family: GR-B;
+                  font-size: 16px;
+                  color: black;
+               }
+               &-symptoms {
+                  position: relative;
+                  .detail {
+                     width: 90%;
+                  }
+                  &:after {
+                     position: absolute;
+                     content: "";
+                     width: 2px;
+                     height: 90%;
+                     background-color: rgba(0, 0, 0, 0.25);
+                     right: 10%;
+                     top: 50%;
+                     @include transform(translateY(-50%));
+                  }
+               }
+               &-buttonGroup {
+                  display: flex;
+                  align-items: center;
+                  justify-content: flex-start;
+                  @include transition($cubic 0.3s);
+                  position: relative;
+               }
+               &-button {
+                  display: flex;
+                  align-items: center;
+                  justify-content: flex-start;
+                  @include mid(false);
+                  cursor: pointer;
+                  background-color: transparent;
+                  border: none;
+                  @include transition(0.3s);
+                  min-width: 100%;
+                  img {
+                     width: 15px;
+                     height: auto;
+                  }
+                  span {
+                     margin-left: 5px;
+                     width: fit-content;
+                     font-family: GR-B;
+                     font-size: 14px;
+                     color: $primary2-cl;
+                  }
+                  &.notYet {
+                     pointer-events: none;
+                     span {
+                        color: #7a7a7a;
+                     }
+                  }
+                  &:hover {
+                     @include transition(0.3s);
+                     @include transform(translate(-50%, -50%) scale(0.98));
+                  }
+               }
+            }
+            & > div {
+               padding-bottom: 20px;
+            }
+         }
+      }
+   }
+}
+.popupWriteMedicalRecord {
+   position: fixed;
+   z-index: 101;
+   top: 0;
+   .bg-black {
+      z-index: 102;
+   }
+   &__content {
+      position: fixed;
+      z-index: 103;
+      right: 0;
+      background-color: #f4f7f6;
+      height: 100vh;
+      width: 62vw;
+      padding-block: 18px;
+      @include animation(slide-in-right 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both);
+      overflow-y: scroll;
+      @include customscroll(2px, transparent, #7c7c7c);
+      &-title {
+         display: flex;
+         align-items: center;
+         justify-content: space-between;
+         margin: 20px 60px;
+         padding-block: 15px;
+         border-bottom: 1px solid #cccccc;
+         h3 {
+            font-size: 18px;
+         }
+         .closePopup {
+            border: none;
+            outline: none;
+            background-color: transparent;
+            cursor: pointer;
+            img {
+               @include transition(ease-in 0.3s);
+            }
+            &:hover {
+               img {
+                  filter: invert(42%) sepia(100%) saturate(616%) hue-rotate(137deg) brightness(100%) contrast(96%);
+                  @include transition(ease-in 0.3s);
+               }
+            }
+         }
+      }
+      &-inputForm {
+         margin: 20px 60px;
+         display: flex;
+         flex-direction: column;
+         justify-content: flex-start;
+         input {
+            padding-inline: 15px;
+         }
+         textarea {
+            padding-inline: 15px;
+         }
+         .inputItem {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            font-family: GR-B;
+            width: 100%;
+            margin-top: 1em;
+            &.validation {
+               margin-top: 0;
+               .inputItem {
+                  &__input {
+                     margin-top: 12px;
+                     margin-bottom: 5px;
+                  }
+                  &__textarea {
+                     margin-top: 5px;
+                     margin-bottom: 12px;
+                  }
+               }
+            }
+            &.symptom {
+               width: 100%;
+               margin-bottom: 15px;
+               align-items: flex-start;
+            }
+            &.pathological {
+               align-items: flex-start;
+               .inputItem__title {
+                  margin-top: 5px;
+               }
+            }
+            &.medicineName {
+               .inputItem__input {
+                  width: 92%;
+               }
+            }
+            &__title {
+               font-size: 18px;
+               color: #383738;
+               width: calc(150px + 3vw);
+               &.quantity {
+                  width: fit-content;
+                  margin-right: 10px;
+               }
+            }
+            &__input {
+               &.quantity {
+                  margin-right: 5px;
+               }
+            }
+            &__value {
+               font-size: 16px;
+               color: #383738;
+               opacity: 0.9;
+               width: 100%;
+            }
+            &__textarea {
+               height: 5em;
+            }
+            span {
+               width: 100%;
+               font-family: GR;
+               font-size: 14px;
+               left: 0;
+               color: #e45858;
+            }
+         }
+      }
+      .medicineInputWrap {
+         display: flex;
+         align-items: center;
+         justify-content: flex-start;
+         .inputItem {
+            &:first-child {
+               width: 120%;
+               margin-right: 10px;
+            }
+            &:last-child {
+               width: 35%;
+            }
+         }
+      }
+      .noteInputWrap {
+         display: flex;
+         align-items: center;
+         margin-bottom: 30px;
+         .inputItem__input {
+            margin-right: 10px;
+            width: calc(100% - 20px);
+         }
+         .btn-plus {
+            flex-grow: 1;
+            margin-top: 1em;
+            position: relative;
+            overflow: hidden;
+            width: 32px;
+            height: 32px;
+            cursor: pointer;
+            @include transition(0.3s);
+            img {
+               @include mid(false);
+               min-width: 100%;
+               min-height: 100%;
+               object-fit: cover;
+            }
+            &:hover {
+               @include transform(scale(1.09));
+               @include transition(0.3s);
+            }
+         }
+      }
+      .prescriptionTable {
+         background-color: white;
+         padding: 5px;
+         position: relative;
+         min-height: 40vh;
+         border: 1px solid rgba(56, 55, 56, 0.3);
+         margin-bottom: 30px;
+         .table-scroll {
+            display: block;
+            margin: 0 auto;
+            empty-cells: show;
+            border-collapse: collapse;
+            width: 100%;
+            height: 100%;
+            thead {
+               position: relative;
+               display: block;
+               width: 100%;
+            }
+            tbody {
+               @include customscroll(3px, transparent, #7c7c7c);
+               display: block;
+               position: relative;
+               width: 100%;
+               overflow-y: scroll;
+               font-size: 18px;
+               max-height: 37vh;
+               tr {
+                  width: 100%;
+                  display: flex;
+                  align-items: center;
+                  td {
+                     display: block;
+                     text-align: left;
+                     padding: 18px 20px;
+                     .nameAndNote {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: flex-start;
+                        .name {
+                           font-family: GR-B;
+                           color: $primary2-cl;
+                           margin-bottom: 10px;
+                        }
+                        .note {
+                           font-family: GR-SB;
+                           font-style: italic;
+                           color: #666666;
+                        }
+                     }
+                     .quantityAndUnit {
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: center;
+                        font-family: GR-B;
+                        color: #666;
+                        .quantity {
+                           margin-right: 5px;
+                        }
+                     }
+                     .btn-close {
+                        outline: none;
+                        background-color: transparent;
+                        border: 1px solid #666;
+                        border-radius: 50%;
+                        position: relative;
+                        overflow: hidden;
+                        width: 22px;
+                        height: 22px;
+                        @include transition(0.3s);
+                        img {
+                           @include mid(false);
+                           min-width: 100%;
+                           min-height: 100%;
+                           object-fit: cover;
+                           padding: 4px;
+                        }
+                        &:hover {
+                           cursor: pointer;
+                           border-color: #e45858;
+                           @include transition(0.3s);
+                           background-color: #e45858;
+                           img {
+                              @include transform(translate(-50%, -50%) scale(0.98));
+                           }
+                        }
+                     }
+                  }
+               }
+            }
+            &.small-first-col {
+               td {
+                  &:first-child {
+                     flex-basis: 75%;
+                  }
+                  &:nth-child(2) {
+                     flex-basis: 15%;
+                     text-align: center;
+                  }
+                  &:last-child {
+                     text-align: center;
+                     flex-basis: 10%;
+                  }
+               }
+            }
+         }
+      }
+   }
+}

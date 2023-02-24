@@ -1,0 +1,26 @@
+.updateAccountInformation {
+   .wrapMain {
+      .content {
+         height: max-content;
+         background-color: white;
+         width: 100%;
+         padding: 40px 50px;
+         position: relative;
+         .formUpdate {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            .informUpdate {
+               display: flex;
+               margin-bottom: 30px;
+               .inputGroup {
+                  display: flex;
+                  width: 80%;
+                  justify-content: center;
+                  align-items: flex-start;
+               }
+            }
+         }
+      }
+   }
+}

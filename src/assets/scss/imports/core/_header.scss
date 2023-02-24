@@ -1,0 +1,74 @@
+// css header
+.header {
+   position: sticky;
+   top: 0;
+   background-color: white;
+   z-index: 100;
+   height: var(--heightHeader);
+   max-width: 100%;
+   font-family: GR-M;
+   font-size: 16px;
+   .container-fluid {
+      height: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+   }
+   &__menu {
+      display: flex;
+      align-items: center;
+      &-item {
+         padding-inline: 30px;
+         a {
+            color: $text-black-cl;
+         }
+      }
+   }
+   &__toggleLogin {
+      display: flex;
+      align-items: center;
+      height: 100%;
+      &-yes {
+         position: relative;
+         width: 85px;
+         display: flex;
+         align-items: center;
+         cursor: pointer;
+         .user-avatar {
+            width: 42px;
+            height: 42px;
+            border-radius: 50px;
+            object-fit: cover;
+            margin-right: 5px;
+         }
+      }
+   }
+}
+@media (max-width: 1262px) {
+   .header {
+      font-size: 15px;
+      &__menu {
+         &-item {
+            padding-inline: 22px;
+         }
+      }
+   }
+}
+@media (max-width: 1122px) {
+   .header {
+      font-size: 14px;
+      &__menu {
+         display: none;
+      }
+   }
+}
+@media (max-with: 992px) {
+   .header {
+      font-size: 14px;
+      &__menu {
+         &-item {
+            padding-inline: 18px;
+         }
+      }
+   }
+}

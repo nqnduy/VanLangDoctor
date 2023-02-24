@@ -1,0 +1,43 @@
+/* Core variables and mixins*/
+
+@import "imports/core/reset";
+@import "imports/core/variables";
+@import "imports/core/mixins";
+@import "imports/core/layouts";
+@import "imports/core/elements";
+@import "imports/core/components";
+@import "imports/core/libs";
+@import "imports/core/loading";
+@import "imports/core/managementFrame";
+//@import "imports/core/bootstrap_mini"; // Nếu không Responsive bằng Boostrap 4 Grid thì không cần import vào.
+
+/* Navigation, header, footer*/
+
+@import "imports/core/header";
+@import "imports/core/footer";
+@import "imports/core/notification";
+
+/* Pages*/
+
+@import "imports/pages/home";
+@import "imports/pages/access";
+@import "imports/pages/blog";
+@import "imports/pages/blogDetail";
+@import "imports/pages/dpInfo";
+@import "imports/pages/customer_requestList";
+@import "imports/pages/customer_allConsultations";
+@import "imports/pages/customer_registerConsultation";
+@import "imports/pages/customer_updateInformation";
+@import "imports/pages/dpLogin";
+@import "imports/pages/dpDashboard";
+@import "imports/pages/dpCustomerList";
+@import "imports/pages/dpCustomerInformation";
+@import "imports/pages/adLogin";
+@import "imports/pages/dpUpdateInformation";
+@import "imports/pages/manager_consultationRequest";
+@import "imports/pages/customer_changeRequest";
+@import "imports/pages/admin_accountDetail";
+@import "imports/pages/manager_statistic";
+@import "imports/pages/admin_createAccount";
+@import "imports/pages/admin_medicine";
+@import "imports/pages/admin_createMedicine";

@@ -1,0 +1,224 @@
+.ManagementFrame {
+   overflow-y: hidden;
+   .columnTab {
+      position: fixed;
+      height: 100vh;
+      width: var(--widthColumnTab);
+      &__logo {
+         margin-block: 30px;
+         margin-left: 20px;
+      }
+      &__list {
+         &-item {
+            font-family: GR-SB;
+            font-size: 18px;
+            display: block;
+            padding-block: 18px;
+            padding-left: 35px;
+            width: 100%;
+            height: 100%;
+            cursor: pointer;
+            position: relative;
+            @include transition(0.4s ease-in);
+            i {
+               margin-right: 10px;
+               img {
+                  width: 15px;
+                  height: auto;
+               }
+            }
+            &.active {
+               background: $primary-cl;
+               color: white;
+               box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.25);
+               @include transition(0.4s ease-in);
+               i {
+                  img {
+                     filter: invert(100%) sepia(9%) saturate(0%) hue-rotate(134deg) brightness(107%) contrast(107%);
+                  }
+               }
+            }
+         }
+         li:last-child {
+            opacity: 0;
+            pointer-events: none;
+         }
+      }
+      &__accountInfo {
+         position: absolute;
+         bottom: 0;
+         width: 100%;
+         height: 68px;
+         display: flex;
+         align-items: center;
+         font-family: GR;
+         font-size: 18px;
+         cursor: pointer;
+         img {
+            --unitCircle: 45px;
+            width: var(--unitCircle);
+            height: var(--unitCircle);
+            border-radius: 50%;
+            object-fit: cover;
+            margin-left: 20px;
+            margin-right: 10px;
+         }
+         &.active {
+            background-color: $primary-cl;
+            color: white;
+            font-family: GR-SB;
+         }
+      }
+   }
+   .contentManagement {
+      position: fixed;
+      z-index: 100;
+      width: calc(100vw - var(--widthColumnTab));
+      margin-left: var(--widthColumnTab);
+      &__header {
+         margin-bottom: var(--heightHeader);
+         background-color: $bg-management-cl;
+         box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.25);
+         width: 100%;
+         height: var(--heightHeaderManagement);
+         padding-left: 45px;
+         padding-right: 35px;
+         margin-right: auto;
+         margin-left: auto;
+         display: flex;
+         align-items: center;
+         justify-content: space-between;
+         margin-bottom: 5px;
+         &-left {
+            display: flex;
+            align-items: center;
+            img {
+               width: 28px;
+               height: auto;
+               filter: invert(46%) sepia(94%) saturate(512%) hue-rotate(132deg) brightness(96%) contrast(96%);
+            }
+            h2 {
+               margin-left: 10px;
+               font-family: GR-XB;
+               font-size: 25px;
+               line-height: 14px;
+            }
+         }
+         &-right {
+            display: flex;
+            align-items: center;
+            height: 100%;
+            &--AM {
+               display: flex;
+               align-items: center;
+               height: 100%;
+               .textWrap {
+                  display: flex;
+                  align-items: center;
+                  font-family: GR;
+                  font-size: 16px;
+                  position: relative;
+                  padding-right: 23px;
+                  .icon {
+                     @include size(20px, 20px);
+                     position: relative;
+                     overflow: hidden;
+                     margin-right: 8px;
+                     img {
+                        @include mid(false);
+                        min-width: 100%;
+                        min-height: 100%;
+                        object-fit: cover;
+                     }
+                  }
+                  &:after {
+                     content: "";
+                     position: absolute;
+                     top: 50%;
+                     @include transform(translateY(-50%));
+                     height: calc(var(--heightHeaderManagement) + 18px);
+                     width: 0.5px;
+                     background-color: black;
+                     opacity: 0.2;
+                     right: 0;
+                     top: 0;
+                  }
+               }
+               .logout-btn {
+                  height: 100%;
+                  display: flex;
+                  align-items: center;
+                  cursor: pointer;
+                  &__icon {
+                     position: relative;
+                     overflow: hidden;
+                     display: flex;
+                     @include size(20px, 20px);
+                     margin-left: 28px;
+                     @include transition(0.3s);
+                     img {
+                        margin: auto;
+                        min-width: 100%;
+                        min-height: 100%;
+                        object-fit: cover;
+                     }
+                  }
+                  &:hover {
+                     .logout-btn__icon {
+                        filter: invert(45%) sepia(96%) saturate(3543%) hue-rotate(153deg) brightness(105%) contrast(96%);
+                        @include transition(0.3s);
+                     }
+                  }
+               }
+            }
+            &.yes {
+               position: relative;
+               width: 85px;
+               display: flex;
+               align-items: center;
+               cursor: pointer;
+               .user-avatar {
+                  width: 42px;
+                  height: 42px;
+                  border-radius: 50px;
+                  object-fit: cover;
+                  margin-right: 5px;
+               }
+            }
+         }
+      }
+   }
+}
+@media (max-width: 1480px) {
+   .ManagementFrame {
+      .columnTab {
+         &__logo {
+            margin-left: 15px;
+         }
+         &__list {
+            &-item {
+               padding-left: 30px;
+            }
+         }
+      }
+   }
+}
+@media (max-width: 1300px) {
+   .ManagementFrame {
+      .columnTab {
+         &__logo {
+            margin-left: 12px;
+         }
+         &__list {
+            &-item {
+               padding-left: 23px;
+            }
+         }
+         &__accountInfo {
+            img {
+               margin-left: 15px;
+            }
+         }
+      }
+   }
+}

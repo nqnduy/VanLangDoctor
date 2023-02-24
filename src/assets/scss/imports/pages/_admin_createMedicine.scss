@@ -1,0 +1,29 @@
+.adminCreateMedicine, .adminUpdateMedicine {
+   .formCreateMedicine {
+      width: 100%;
+      padding: 80px 100px;
+      .inputGroup {
+         width: 100%;
+         .text-field {
+            width: 100%;
+            margin-inline: 0;
+            input,
+            select {
+               width: 100%;
+            }
+         }
+         .dFlex {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+         }
+      }
+      .btnGroup {
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         margin-top: 50px;
+         gap: 20px;
+      }
+   }
+}

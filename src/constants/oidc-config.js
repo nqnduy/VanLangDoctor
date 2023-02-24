@@ -1,0 +1,1 @@
+export const UrlBackEnd = process.env.VUE_APP_BACKEND_URL

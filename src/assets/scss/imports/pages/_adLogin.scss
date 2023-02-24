@@ -1,0 +1,324 @@
+.adLogin {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    &__background {
+        position: relative;
+        z-index: 2;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        filter: brightness(0.5);
+        img {
+            min-height: 100%;
+            min-width: 100%;
+            top: 50%;
+            left: 50%;
+            position: absolute;
+            @include transform(translate(-50%, -50%));
+            background-size: cover;
+        }
+    }
+    &__content {
+        position: absolute;
+        z-index: 70;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        .container {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            .form-login {
+                display: flex;
+                width: 35%;
+                height: 100%;
+                align-items: center;
+                margin: auto;
+                box-shadow: 0px 4px rgba(0, 0, 0, 0.25);
+                .inform {
+                    border-radius: 10px;
+                    background: white;
+                    padding-block: 55px;
+                    padding-inline: 40px;
+                    display: block;
+                    width: 90%;
+                    a {
+                        pointer-events: none;
+                        text-align: center;
+                        display: block;
+                        position: relative;
+                        margin-bottom: 50px;
+                        img {
+                            width: 372px;
+                            height: auto;
+                        }
+                    }
+                    .role {
+                        position: absolute;
+                        right: 2px;
+                        bottom: 7px;
+                        font-family: GR-B;
+                        padding: 3px 6px;
+                        font-size: 9px;
+                        border: 1px solid $primary2-cl;
+                        color: white;
+                        border-radius: 5px;
+                        background-color: $primary2-cl;
+                    }
+                    form {
+                        margin-top: 20px;
+                        .title-name {
+                            text-align: center;
+                            font-family: GR-M;
+                            font-size: 16px;
+                            padding: 20px 0px;
+                            &-warning {
+                                font-family: GR-B;
+                                color: black;
+                                margin-inline: 1.5px;
+                                display: inline;
+                            }
+                        }
+                        .inputUser{
+                            display: block;
+                            font-family: GR;
+                            font-size: 16px;
+                            width: 100%;
+                            height: 46px;
+                            border-radius: 20px;
+                            padding-inline: 20px;
+                            border: none;
+                            outline: none;
+                            margin: 15px auto 7px auto; 
+                        }
+                        .input {
+                            display: block;
+                            font-family: GR;
+                            font-size: 16px;
+                            width: 100%;
+                            height: 46px;
+                            border-radius: 20px;
+                            padding-inline: 20px;
+                            border: none;
+                            outline: none;
+                            margin: 15px auto 7px auto;                            
+                            &:placeholder-shown {
+                                padding-left: 20px;
+                            }
+                            &:focus {
+                                border: 0.5px solid $primary-cl;
+                                &::placeholder {
+                                    opacity: 0;
+                                    @include transition(ease-in 0.1s);
+                                }
+                            }
+                        }
+                        span {
+                            font-family: GR-M;
+                            font-size: 14px;
+                            left: 0;
+                            color: #e45858;
+                            margin-left: 20px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media (max-width: 1600px) {
+    .adLogin {
+        &__content {
+            .container {
+                .title {
+                    h1 {
+                        font-size: 85px;
+                    }
+                }
+                .form-login {
+                    .inform {
+                        width: 100%;
+                        a {
+                            margin-bottom: 20px;
+                        }
+                        .title-name {
+                            padding: 15px 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media (max-width: 1460px) {
+    .adLogin {
+        &__content {
+            .container {
+                .title {
+                    h1 {
+                        font-size: 80px;
+                    }
+                }
+                .form-login {
+                    .inform {
+                        form {
+                            .title-name {
+                                padding: 10px 0px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media (max-width: 1400px) {
+    .adLogin {
+        &__content {
+            .container {
+                .form-login {
+                    .inform {
+                        form {
+                            .input {
+                                height: 40px;
+                                font-size: 14px;
+                            }
+                            span {
+                                font-size: 13px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media (max-width: 1200px) {
+    .adLogin {
+        &__content {
+            .container {
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                .title {
+                    width: 100%;
+                    justify-content: center;
+                    display: flex;
+                    h1 {
+                        width: 50%;
+                        font-size: 72px;
+                    }
+                }
+                .form-login {
+                    justify-content: center;
+                    margin-top: 30px;
+                    width: 40%;
+                    .inform {
+                        padding-block: 45px;
+                        a {
+                            margin-bottom: 0px;
+                            img {
+                                width: 332px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media (max-width: 992px) {
+    .adLogin {
+        &__content {
+            .container {
+                .title {
+                    h1 {
+                        display: none;
+                    }
+                }
+                .form-login {
+                    display: flex;
+                    justify-self: center;
+                    align-items: center;
+                    margin-top: 0;
+                    width: 60%;
+                    .inform {
+                        form {
+                            .input {
+                                height: 46px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media (max-width: 768px) {
+    .adLogin {
+        &__content {
+            .container {
+                .form-login {
+                    display: flex;
+                    justify-self: center;
+                    align-items: center;
+                    margin-top: 0;
+                    width: 70%;
+                    .inform {
+                        form {
+                            .title-name {
+                                font-size: 12px;
+                            }
+                            .input {
+                                height: 46px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media (max-width: 470px) {
+    .adLogin {
+        &__content {
+            .container {
+                .form-login {
+                    width: 96%;
+                    .inform {
+                        form {
+                            .input {
+                                height: 46px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media (max-width: 400px) {
+    .adLogin {
+        &__content {
+            .container {
+                .form-login {
+                    .inform {
+                        padding-inline: 20px;
+                        a {
+                            img {
+                                width: 260px;
+                            }
+                        }
+                        form {
+                            .input {
+                                height: 46px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

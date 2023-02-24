@@ -1,0 +1,44 @@
+@font-face {
+    font-family: "GR-XB";
+    src: url("./SVN-GilroyXBold.woff2") format("woff2"),
+        url("./SVN-GilroyXBold.woff") format("woff");
+    font-weight: bold;
+    font-style: normal;
+    font-display: fallback;
+}
+
+@font-face {
+    font-family: "GR-SB";
+    src: url("./SVN-GilroySemiBold.woff2") format("woff2"),
+        url("./SVN-GilroySemiBold.woff") format("woff");
+    font-weight: 600;
+    font-style: normal;
+    font-display: fallback;
+}
+
+@font-face {
+    font-family: "GR";
+    src: url("./SVN-Gilroy.woff2") format("woff2"),
+        url("./SVN-Gilroy.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+    font-display: fallback;
+}
+
+@font-face {
+    font-family: "GR-M";
+    src: url("./SVN-GilroyMedium.woff2") format("woff2"),
+        url("./SVN-GilroyMedium.woff") format("woff");
+    font-weight: 500;
+    font-style: normal;
+    font-display: fallback;
+}
+
+@font-face {
+    font-family: "GR-B";
+    src: url("./SVN-GilroyBold.woff2") format("woff2"),
+        url("./SVN-GilroyBold.woff") format("woff");
+    font-weight: bold;
+    font-style: normal;
+    font-display: fallback;
+}

@@ -1,0 +1,73 @@
+const EndPoints = {
+    // Email verify
+    emailVerify: "/api/email/activate?",
+    // customer
+    customerLogin: "/api/auth/login",
+    customerRegister: "/api/auth/register",
+    getBlogList: "/api/blog",
+    getSearchBlogList: "/api/blog?",
+    getBlogDetails: "/api/blog/",
+    getDoctorList: "/api/doctorpharmacist",
+    getCustomerAllConsultations: "/api/Consultation",
+    // customer consultations
+    getConsultationRequestList: "/api/ConsultationRequest?",
+    customerCancelConsultationsRequest: "/api/ConsultationRequest/cancelConsultationRequest?",
+    customerRegisterConsultation: "/api/ConsultationRequest/registerConsultation",
+    customerSearchDoctorConsultation: "/api/search",
+    customerGetDoctorInformation: "/api/search/",
+    getMeetingURL: "/api/consultation/meeting/",
+    getCustomerMedicalRecord: '/api/medical/medicalrecord/',
+    customerRating: '/api/rating/ratingConsultation/',
+    customerGetSelfInformation: '/api/Account/accountInformation',
+    customerUpdateSelfInformation: '/api/account/updateAccount',
+    customerChangeDoctorRequested: '/api/Search/free-doctor-pharmacist?',
+    customerChangeRequest: '/api/consultationrequest/changeRequest',
+    // customer notification
+    customerGetNotification: '/api/notification',
+    // doctor
+    doctorLogin: "/api/auth/doctor-login",
+    // doctor schedule
+    doctorSchedule: '/api/consultation/consultations-doctorpharmacist',
+    doctorGetNextCustomer: '/api/consultationrequest/dashboard',
+    doctorOpenMeetingZoom: '/api/zoom/consultation/',
+    doctorCloseMeetingZoom: '/api/consultation/finishConsultation/',
+    doctorCancelConsultation: '/api/consultation/cancelConsultation/',
+    doctorGetListCustomerConsultation: '/api/customer',
+    doctorGetConsultationRequestList: '/api/consultationrequest/requests-doctorpharmacist',
+    doctorApproveConsultationRequest: '/api/consultationrequest/confirmedRequest/',
+    doctorIgnoreConsultationRequest: '/api/consultationrequest/ignoreRequest/',
+    doctorGetMedicine: '/api/Medical/medicine',
+    doctorGetInformationCustomer: '/api/customer/',
+    doctorSubmitMedicalRecord: '/api/Medical/writeMedicalRedcord',
+    doctorGetCustomerMedicalRecord: '/api/medical/',
+    doctorGetOwnedInformation: '/api/account/docPharAccountInformation',
+    doctorUpdateOwnedInformation: '/api/account/updateDocPharAccount',
+    doctorUpdatePassword: '/api/auth/changePassword',
+    //admin
+    adminLogin:'/api/auth/admin-login',
+    adminListDPAccount: '/api/Admin/dp-account?',
+    adminDPAccountDetails: (id) => `/api/admin/dp-account/${id}`,
+    adminManageAccount: '/api/admin/dp-account-block',
+    adminCreateNewDPAccount: '/api/admin/dp-account-save?',
+    adminUpdateDPAccount: '/api/Admin/dp-account-update?',
+    adminListcategory: '/api/admin/category',
+    adminCreateCategory: '/api/Admin/category/create?',
+    adminUpdatedNameMedicineCategory: '/api/Admin/category/update?',
+    adminDeleteCategory: '/api/Admin/category/delete?',
+    adminGetMedicineList :'/api/Admin/medicine',
+    adminGetMedicineDetails: `/api/Admin/medicine/`,
+    adminCreateMedicine :'/api/Admin/medicine/create',
+    adminUpdateMedicine: '/api/Admin/medicine/update?',
+    adminDeleteMedicine: '/api/Admin/medicine/delete',
+    //manager
+    managerRequestList: '/api/consultationrequest/requests-manager?',
+    managerStaticsPrescriptionConsultation :'/api/Medical/prescription-consultation?',
+    managerStaticsAllRating : '/api/Consultation/rating-statistic?',
+    managerStaticsAllRatio: '/api/Consultation/rating-ratio',
+    managerStaticsAllConsultationRatio: '/api/Statistic/consultation-ratio?',
+    managerStaticsAllConsultationStatistic: '/api/Statistic/consultation-statistic?',
+    //notification
+    getNotification: '/api/notification',
+};
+
+export default EndPoints;

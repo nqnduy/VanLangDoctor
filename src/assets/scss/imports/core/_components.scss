@@ -1,0 +1,634 @@
+// css components
+
+/*========VDropdown=========*/
+.dropdown {
+  position: fixed;
+  z-index: 100;
+  top: calc(var(--heightHeader) - 10px);
+  background-color: white;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 5px;
+  right: var(--rightDRD);
+  width: 265px;
+  cursor: pointer;
+  .account-info {
+    display: flex;
+    align-items: center;
+    padding-block: 15px;
+    padding-inline: 18px;
+    color: #000;
+    @include transition(0.3s ease-in);
+    img {
+      width: 47px;
+      height: 47px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-right: 10px;
+    }
+    p {
+      font-family: GR-SB;
+      font-size: 16px;
+    }
+    span {
+      font-family: GR;
+      font-size: 12px;
+      color: rgba(0, 0, 0, 0.5);
+    }
+    &:hover {
+      @include transition(0.3s ease-in);
+      background-color: hsla(185, 57%, 56%, 0.27);
+    }
+  }
+  li {
+    @include transition(0.3s ease-in);
+    &:hover {
+      @include transition(0.3s ease-in);
+      background-color: hsla(185, 57%, 56%, 0.27);
+    }
+  }
+  .logout {
+    a {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+  &__item {
+    display: inline-block;
+    padding-block: 12px;
+    padding-inline: 18px;
+    height: 100%;
+    width: 100%;
+    font-size: 14px;
+    color: #000;
+    font-family: GR-M;
+  }
+}
+/*========VButton=========*/
+.btn-homePage {
+  outline: none;
+  font-family: GR-M;
+  font-size: 15px;
+  background-color: $primary-cl;
+  padding: 13px 35px;
+  color: #2e2e2e;
+  border-radius: 30px;
+  border: solid 0.5px $primary-cl;
+  @include transition(0.3s ease-in);
+  cursor: pointer;
+  &:hover {
+    @include transition(0.3s ease-in);
+    background-color: white;
+    color: $primary2-cl;
+  }
+  &.white {
+    background-color: white;
+    &:hover {
+      @include transition(0.3s ease-in);
+      background-color: $primary-27-cl;
+      color: $primary2-cl;
+    }
+    &:disabled {
+      pointer-events: none !important;
+    }
+  }
+}
+.btn-submitForm {
+  outline: none;
+  font-family: GR-M;
+  font-size: 15px;
+  background-color: #d0eff2;
+  padding: 13px 35px;
+  color: #2e2e2e;
+  border-radius: 30px;
+  border: solid 0.5px $primary-cl;
+  @include transition(0.3s ease-in);
+  cursor: pointer;
+  &:hover {
+    @include transition(0.3s ease-in);
+    background-color: $primary-cl;
+    color: white;
+  }
+  &.white {
+    background-color: white;
+    &:hover {
+      @include transition(0.3s ease-in);
+      background-color: $primary-27-cl;
+      color: $primary2-cl;
+    }
+    &:disabled {
+      pointer-events: none !important;
+    }
+  }
+}
+.Button {
+  &.btn-submitManagement {
+    cursor: pointer;
+    font-family: GR-B;
+    font-size: 15px;
+    background-color: transparent;
+    padding: 8px 28px;
+    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.4);
+    border-radius: 3px;
+    border: none;
+    @include transition(0.3s ease-in);
+    &:hover {
+      background-color: $primary-cl;
+      color: white;
+      @include transform(scale(0.97));
+      @include transition(0.3s ease-in);
+    }
+  }
+}
+.buttonPopupDetail {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #e7e7e7;
+  width: 90px;
+  padding: 7px 12px;
+  border-radius: 20px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  @include transition(ease-out 0.3s);
+  span {
+    font-family: GR-B;
+    font-size: 15px;
+  }
+  .circle {
+    position: relative;
+    width: 24px;
+    height: 24px;
+    background-color: $primary-cl;
+    border-radius: 50%;
+    overflow: hidden;
+    @include transition(ease-out 0.3s);
+    img {
+      @include mid(false);
+      min-width: 90%;
+      min-height: 90%;
+      object-fit: cover;
+      filter: invert(100%) sepia(100%) saturate(13%) hue-rotate(220deg) brightness(103%) contrast(103%);
+      @include transition(ease-out 0.3s);
+    }
+  }
+  &:hover {
+    width: 110px;
+    @include transition(ease-out 0.3s);
+    .circle {
+      background-color: $primary2-cl;
+      @include transition(ease-out 0.3s);
+
+      img {
+        @include transform(translate(-50%, -50%) rotate(180deg));
+        @include transition(ease-out 0.3s);
+      }
+    }
+    span {
+    }
+  }
+}
+/*========VInput=========*/
+.inputUser {
+  display: block;
+  width: 100%;
+  height: 46px;
+  border-radius: 20px;
+  border: none;
+  background-color: #faf8f8;
+  padding-block: 12.5px;
+  font-family: GR;
+  font-size: 16px;
+  padding-inline: 20px;
+  outline: none;
+  &:placeholder-shown {
+    padding-left: 20px;
+  }
+  &:focus {
+    border: 0.5px solid $primary-cl;
+    &::placeholder {
+      opacity: 0;
+      @include transition(ease-in 0.3s);
+    }
+  }
+}
+.BannerHome {
+  width: 50%;
+  position: relative;
+  .banner-img {
+    position: relative;
+    z-index: 10;
+  }
+  svg {
+    margin-top: 150px;
+    position: absolute;
+    z-index: 9;
+    fill: $primary-27-cl;
+    width: 1000px;
+    height: auto;
+    right: -20%;
+    margin-top: -150px;
+    transform: scaleX(-1);
+  }
+}
+.bg-black {
+  position: fixed;
+  opacity: 1;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.575);
+}
+/*========VPopupConfirm=========*/
+.popupConfirm,
+.popupCreateMedicineCategory,
+.popupUpdateMedicineCategory {
+  position: fixed;
+  top: 0;
+  z-index: 104;
+  @include animation(fade-in 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) both);
+  .bg-black {
+    z-index: 103;
+  }
+  &__content {
+    position: fixed;
+    display: flex;
+    top: 50%;
+    left: 50%;
+    @include transform(translate(-50%, -50%));
+    z-index: 104;
+    background-color: #f4f7f6;
+    max-width: 35vw;
+    min-height: 30vh;
+    padding: 40px 25px;
+    flex-direction: column;
+    border-radius: 5px;
+    .btn-close {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 38px;
+      height: 38px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      background-color: $primary-cl;
+      border-top-right-radius: 5px;
+      @include transition($cubic 0.5s);
+      box-shadow: inset 0px 0px 3px rgba(0, 0, 0, 0.25);
+      &:hover {
+        @include transition($cubic 0.5s);
+        border-bottom-left-radius: 5px;
+        box-shadow: $contentManagement-bShadow;
+      }
+    }
+    .titleConfirm {
+      width: calc(100% - 5vw);
+      text-align: center;
+      margin: 0 auto;
+      font-family: GR;
+      display: block;
+      font-size: 15px;
+      margin-bottom: 40px;
+      strong {
+        display: block;
+        font-family: GR-B;
+        margin-bottom: 20px;
+        font-size: calc(14px + 1vw);
+      }
+      &.refuseRequest {
+        width: calc(100% - 10vw);
+        margin-bottom: 20px;
+      }
+    }
+    .textareaManagement {
+      margin-bottom: 8px;
+    }
+    span {
+      font-family: GR;
+      font-size: 14px;
+      left: 0;
+      color: #e45858;
+    }
+  }
+}
+.popupCreateMedicineCategory,
+.popupUpdateMedicineCategory {
+  &__content {
+    min-width: 50vw;
+    .text-field {
+      input {
+        width: 100%;
+        margin-bottom: 7px;
+      }
+    }
+  }
+}
+/*========SearchAutoComplete=========*/
+.autocomplete {
+  width: 100%;
+  position: relative;
+  // input {
+  //    width: 100%;
+  // }
+  &-input {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #fff;
+    border: 1px solid #6b656530;
+    border-radius: 5px;
+    input {
+      width: 100%;
+      height: 38px;
+      border: none;
+      outline: none;
+      border-radius: 5px;
+      font-size: 18px;
+      font-family: GR;
+      background-color: #fff;
+    }
+    .iconDropdown {
+      width: 30px;
+      height: auto;
+      position: relative;
+      cursor: pointer;
+      img {
+        --valueIcon: 10px;
+        width: var(--valueIcon);
+        height: var(--valueIcon);
+        @include mid(false);
+      }
+    }
+    &:focus-within {
+      border: 0.5px solid $primary2-cl;
+      @include transition(ease $t);
+    }
+  }
+  &-results {
+    position: absolute;
+    padding: 0;
+    margin: 0;
+    border: 1px solid #eeeeee;
+    // height: 120px;
+    max-height: 10em;
+    overflow: auto;
+    width: 100%;
+    background-color: white;
+    @include customscroll(2px, transparent, #7c7c7c);
+  }
+
+  &-result {
+    font-family: GR-B;
+    list-style: none;
+    text-align: left;
+    padding: 10px 15px;
+    cursor: pointer;
+    &:hover,
+    &.is-active {
+      background-color: $primary-cl;
+      color: white;
+    }
+  }
+}
+.formUpdate {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  .informUpdate {
+    display: flex;
+    // flex-direction: row;
+    // align-items: flex-start;
+    margin-bottom: 30px;
+    .upLoadAvtGroup {
+      width: 20%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      &__img {
+        width: 170px;
+        height: 170px;
+        border-radius: 50%;
+        position: relative;
+        overflow: hidden;
+        margin-bottom: 30px;
+        img {
+          @include mid(false);
+          min-width: 100%;
+          min-height: 100%;
+          object-fit: cover;
+        }
+      }
+      &__btn {
+        font-family: GR-B;
+        font-size: 13px;
+        background-color: white;
+        padding: 10px 25px;
+        color: $primary2-cl;
+        border-radius: 30px;
+        border: solid 0.5px $primary-cl;
+        @include transition($cubic $t);
+        cursor: pointer;
+        &:hover {
+          @include transition($cubic $t);
+          background-color: $primary2-cl;
+          color: white;
+        }
+      }
+    }
+    .inputGroup {
+    }
+  }
+}
+.text-field {
+  position: relative;
+  margin-inline: 20px;
+  top: 0;
+  margin-bottom: 25px;
+  label {
+    display: inline-block;
+    color: #333;
+    font-weight: 600;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    left: 10px;
+    font-family: GR-B;
+    background-color: white;
+    padding: 1px 5px;
+    font-size: 12px;
+    transform: translateY(-50%);
+    color: $primary2-cl;
+  }
+  input,
+  select {
+    display: block;
+    border: 0;
+    outline: none;
+    padding: 18px;
+    display: block;
+    width: 23vw;
+    font-size: 14px;
+    border: 1px solid $primary-cl;
+    border-radius: 4px;
+    font-family: GR;
+    font-size: 14px;
+    @include transition($cubic 0.3s);
+    appearance: none;
+    &:focus {
+      border: 0.5px solid $primary-cl;
+      box-shadow: $contentManagement-bShadow;
+      @include transition($cubic 0.3s);
+      &::placeholder {
+        opacity: 0;
+        @include transition(ease-in 0.3s);
+      }
+    }
+  }
+  select:focus > option:checked {
+    background: $primary2-cl;
+    font-family: GR-B;
+  }
+  span {
+    font-family: GR;
+    font-size: 13px;
+    left: 0;
+    padding-top: 8px;
+    color: #e45858;
+  }
+}
+.notiBtn {
+  position: relative;
+  border-radius: 50%;
+  @include size(40px);
+  cursor: pointer;
+  background-color: white;
+  margin-right: 20px;
+  box-shadow: $contentManagement-bShadow;
+  @include transition(ease-out 0.3s);
+  img {
+    padding: 10px;
+    @include mid(false);
+    min-width: 100%;
+    min-height: 100%;
+    object-fit: cover;
+    @include transition(ease-out 0.3s);
+  }
+  .noti-badger {
+    position: absolute;
+    right: -5px;
+    top: -5px;
+    width: 20px;
+    height: 20px;
+    box-shadow: $contentManagement-bShadow;
+    background-color: #d33d3d;
+    border-radius: 50%;
+    @include mid(true);
+    span {
+      font-size: 12px;
+      color: white;
+      font-family: GR-SB;
+    }
+  }
+
+  &:hover {
+    background-color: $primary-27-cl;
+    @include transition(ease-out 0.3s);
+    img {
+      @include transition(ease-out 0.3s);
+      @include transform(translate(-50%, -50%) rotate(25deg));
+    }
+  }
+}
+@media (max-width: 1480px) {
+  .BannerHome {
+    svg {
+      right: -150px;
+      width: 980px;
+    }
+  }
+}
+@media (max-width: 1400px) {
+  .BannerHome {
+    svg {
+      width: 950px;
+    }
+  }
+  .Button {
+    .btn-homePage {
+      font-size: 13px;
+      padding: 11px 30px;
+    }
+    .btn-submitForm {
+      font-size: 13px;
+      padding: 11px 30px;
+    }
+  }
+}
+@media (max-width: 1300px) {
+  .BannerHome {
+    svg {
+      width: 850px;
+    }
+  }
+}
+@media (max-width: 1262px) {
+  .BannerHome {
+    svg {
+      width: 800px;
+    }
+  }
+}
+@media (max-width: 1122px) {
+  .BannerHome {
+    svg {
+      width: 750px;
+    }
+  }
+}
+@media (max-width: 992px) {
+  .BannerHome {
+    width: 50%;
+    .banner-img {
+      top: 70px;
+    }
+    svg {
+      width: 650px;
+      right: -18%;
+      top: 120px;
+    }
+  }
+  .Button {
+    .btn-homePage {
+      font-size: 11px;
+      padding: 9px 28px;
+    }
+    .btn-submitForm {
+      font-size: 11px;
+      padding: 9px 28px;
+    }
+  }
+}
+@media (max-width: 768px) {
+  .BannerHome {
+    width: 60%;
+    .banner-img {
+      top: 40px;
+    }
+    svg {
+      width: 600px;
+      right: -30%;
+      top: 30px;
+    }
+  }
+  .Button {
+    .btn-submitForm {
+      padding: 11px 30px;
+      font-size: 13px;
+    }
+  }
+}

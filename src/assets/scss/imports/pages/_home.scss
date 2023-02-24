@@ -1,0 +1,502 @@
+// CSS HOMEPAGE
+.HomePage {
+    .banner {
+        width: 100%;
+        height: calc(100vh - var(--heightHeader));
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+        &__left {
+            z-index: 20;
+            margin-left: var(--marginFakeContainer);
+            padding-left: var(--paddingFakeContainer);
+            width: 50%;
+            h2 {
+                margin-bottom: 25px;
+                font-family: GR-SB;
+                b {
+                    font-family: GR-XB;
+                }
+            }
+            p {
+                font-family: GR;
+                font-size: var(--pFont);
+                margin-bottom: 50px;
+            }
+        }
+    }
+    .OurValue {
+        width: 100%;
+        padding-block: 250px;
+        .container {
+            display: flex;
+            position: relative;
+        }
+        .shape-circle {
+            margin-top: -100px;
+            width: 540px;
+            height: 540px;
+            background-color: $primary-27-cl;
+            border-radius: 50%;
+        }
+        &__contentWrap {
+            position: absolute;
+            margin-top: 40px;
+            margin-left: 440px;
+            h2 {
+                margin-bottom: 50px;
+            }
+            &-details {
+                display: flex;
+                h4 {
+                    font-family: GR-SB;
+                    font-size: var(--h4Font);
+                    line-height: 24px;
+                    color: #131313;
+                }
+                p {
+                    width: 95%;
+                }
+                #left {
+                    margin-left: 70px;
+                }
+            }
+        }
+    }
+    .OurService {
+        display: flex;
+        align-items: center;
+        background-color: #f5f8fa;
+        &__left {
+            width: 50%;
+            margin-left: var(--marginFakeContainer);
+            padding-left: var(--paddingFakeContainer);
+            h2 {
+                margin-bottom: 30px;
+            }
+            p {
+                width: 73%;
+            }
+        }
+        &__right {
+            width: 50%;
+        }
+    }
+    .HowItWork {
+        .container {
+            padding-block: 120px;
+            display: flex;
+            align-items: center;
+        }
+        &__left {
+            width: 50.5%;
+        }
+        &__right {
+            margin-left: 95px;
+            h2 {
+                margin-bottom: 30px;
+            }
+            width: 57.5%;
+        }
+    }
+    .Listen {
+        width: 100%;
+        background-size: cover;
+        background-position: center center/cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        padding: 250px 0;
+        h2 {
+            text-align: center;
+            margin: 0 auto;
+            width: 42%;
+            text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        }
+    }
+    .WeDo {
+        background-color: #f5f8fa;
+        .container {
+            padding-block: 180px;
+            display: flex;
+            align-items: baseline;
+        }
+        &__left {
+            width: 100%;
+            h2 {
+                width: 72%;
+            }
+        }
+        &__right {
+            width: 95%;
+            p {
+                margin-bottom: initial;
+            }
+        }
+    }
+    .FAQ {
+        .container {
+            padding-block: 250px;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+        &__left {
+            width: 50%;
+            margin-right: 50px;
+            p {
+                margin-bottom: initial;
+            }
+            h2 {
+                margin-bottom: 20px;
+            }
+            .container-accordion {
+                cursor: pointer;
+                margin-top: 20px;
+                max-height: 400px;
+                overflow-y: scroll;
+                width: 90%;
+                @include customscroll(3px, #ddd, #7c7c7c);
+            }
+            &-accordion {
+                display: block;
+                margin-block: 15px;
+                background-color: white;
+                .question {
+                    padding: 28px 20px;
+                    position: relative;
+                    font-family: GR-SB;
+                    font-size: 20px;
+                    letter-spacing: -0.01em;
+                    @include transition($t linear);
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    img {
+                        width: 24px;
+                        height: auto;
+                        @include transition($t linear);
+                    }
+                    &:hover {
+                        box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.25);
+                        background: #f5f2f2;
+                    }
+                }
+                .answer {
+                    p {
+                        margin-inline: 25px;
+                        opacity: 0;
+                        max-height: 0px;
+                        overflow-y: hidden;
+                        @include transition($t ease-out);
+                    }
+                }
+                &.open {
+                    .question {
+                        box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.25);
+                        background: #f5f2f2;
+                        img {
+                            @include transform(rotate(90deg));
+                            @include transition($t linear);
+                        }
+                    }
+                    .answer {
+                        padding: initial;
+                        p {
+                            padding-block: 16px;
+                            opacity: 1;
+                            max-height: 500px;
+                            @include transition($t ease-out);
+                        }
+                    }
+                }
+            }
+        }
+        &__right {
+            width: 40%;
+            position: absolute;
+            right: 0px;
+            &-form {
+                width: 80%;
+                border-radius: 10px;
+                border: 1px solid $primary2-cl;
+                background-color: $primary-27-cl;
+                text-align: center;
+                margin: 0 auto;
+                padding: 40px 20px;
+                &-headline {
+                    font-size: 30px;
+                    font-family: GR-XB;
+                    letter-spacing: -0.01em;
+                    width: 75%;
+                    margin: 0 auto;
+                }
+                &-subheadline {
+                    width: 60%;
+                    margin: 15px auto 35px auto;
+                }
+                input {
+                    display: block;
+                    padding: 10px;
+                    height: 55px;
+                    margin: 20px auto;
+                    padding-inline: 20px;
+                    &:placeholder-shown {
+                        padding-left: 20px;
+                    }
+                }
+                input,
+                textarea {
+                    width: 100%;
+                    border-radius: 25px;
+                    border: 0.5px solid transparent;
+                    outline: none;
+                    font-size: 16px;
+                    font-family: GR;
+                    &:focus {
+                        border: 0.5px solid $primary-cl;
+                        &::placeholder {
+                            opacity: 0;
+                            @include transition(ease-in 0.3s);
+                        }
+                    }
+                }
+                textarea {
+                    resize: none;
+                    margin: 0 auto 20px auto;
+                    padding: 20px;
+                }
+            }
+        }
+    }
+}
+@media (max-width: 1600px) {
+    .HomePage {
+        .OurValue {
+            &__contentWrap {
+                margin-left: 360px;
+            }
+        }
+    }
+}
+@media (max-width: 1480px) {
+    .HomePage {
+        .OurValue {
+            &__contentWrap {
+                margin-left: 330px;
+            }
+        }
+        .FAQ {
+            .container {
+                padding-block: 230px;
+            }
+            &__left {
+                .container-accordion {
+                    max-height: 380px;
+                }
+                &-accordion {
+                    .question {
+                        font-size: 18px;
+                    }
+                }
+            }
+            &__right {
+                &-form {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+@media (max-width: 1262px) {
+    .HomePage {
+        .OurValue {
+            &__contentWrap {
+                margin-left: 370px;
+            }
+        }
+    }
+}
+@media (max-width: 1200px) {
+    .HomePage {
+        .OurValue {
+            padding-block: 160px;
+            &__contentWrap {
+                margin-left: 150px;
+            }
+        }
+        .OurService {
+            &__left {
+                h2 {
+                    margin-bottom: 25px;
+                }
+                p {
+                    width: 80%;
+                }
+            }
+        }
+        .FAQ {
+            .container {
+                padding-block: 140px;
+            }
+            &__left {
+                .container-accordion {
+                    width: 100%;
+                }
+                &-accordion {
+                    .question {
+                        font-size: 16px;
+                        padding: 26px 20px;
+                        img {
+                            width: 20px;
+                        }
+                    }
+                }
+            }
+            &__right {
+                &-form {
+                    &-headline {
+                        font-size: 26px;
+                    }
+                    &-subheadline {
+                        width: 65%;
+                        margin: 10px auto 30px auto;
+                    }
+                    input {
+                        font-size: 14px;
+                        height: 45px;
+                        padding-inline: 15px;
+                        margin: 15px auto;
+                        &:placeholder-shown {
+                            padding-left: 15px;
+                        }
+                    }
+                    textarea {
+                        font-size: 14px;
+                        height: 120px;
+                        padding: 15px;
+                    }
+                }
+            }
+        }
+    }
+}
+@media (max-width: 1122px) {
+    .HomePage {
+        .OurService {
+            &__left {
+                h2 {
+                    margin-bottom: 20px;
+                }
+            }
+        }
+    }
+}
+@media (max-width: 992px) {
+    .HomePage {
+        .banner {
+            display: flex;
+            flex-direction: column-reverse;
+            text-align: center;
+            &__left {
+                width: 60%;
+                margin: 0 auto;
+                margin-bottom: 10px;
+            }
+        }
+        .OurValue {
+            .container {
+                height: 100%;
+            }
+            .shape-circle {
+                width: 400px;
+                height: 400px;
+            }
+            &__contentWrap {
+                margin-left: 0;
+                margin-top: -100px;
+                p {
+                    width: 100%;
+                }
+            }
+        }
+        .OurService {
+            flex-direction: column;
+            &__left {
+                margin-top: 30px;
+                margin-left: 0;
+                padding-left: 0;
+                text-align: center;
+                margin-bottom: 30px;
+                width: 85%;
+                p {
+                    width: 100%;
+                }
+            }
+            &__right {
+                position: relative;
+                width: 60%;
+                height: 300px;
+                overflow: hidden;
+                img {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    @include transform(translate(-50%, -50%));
+                    object-fit: cover;
+                    min-width: 100%;
+                    min-height: 100%;
+                }
+            }
+        }
+        .HowItWork {
+            .container {
+                flex-direction: column;
+                text-align: center;
+                padding-block: 70px;
+            }
+            &__left {
+                width: 100%;
+            }
+            &__right {
+                margin-top: 50px;
+                margin-left: 0;
+                width: 100%;
+            }
+        }
+        .Listen {
+            padding: 180px 0;
+            h2 {
+                width: 70%;
+            }
+        }
+        .WeDo {
+            .container {
+                padding-block: 100px;
+            }
+            &__left {
+                h3 {
+                    width: 80%;
+                }
+            }
+        }
+        .FAQ {
+            .container {
+                flex-direction: column;
+                padding-block: 100px;
+            }
+            &__left {
+                width: 100%;
+                margin-right: 0;
+                margin-bottom: 80px;
+                .container-accordion {
+                    max-height: 350px;
+                }
+            }
+            &__right {
+                position: relative;
+                width: 80%;
+            }
+        }
+    }
+}

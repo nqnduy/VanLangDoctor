@@ -1,0 +1,145 @@
+// css navigator (Menu)
+.notitable {
+   z-index: 100;
+   position: fixed;
+   top: calc(var(--heightHeader) - 10px);
+   right: calc(var(--rightDRD) * 1.8);
+   background-color: white;
+   width: 420px;
+   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+   backdrop-filter: blur(4px);
+   -webkit-backdrop-filter: blur(4px);
+   border-radius: 5px;
+   overflow-x: hidden;
+   @include animation(fade-in-top 0.45s cubic-bezier(0.39, 0.575, 0.565, 1) both);
+   h3 {
+      // position: fixed;
+      font-family: GR-SB;
+      font-size: 20px;
+      letter-spacing: -0.01em;
+      padding-block: 20px;
+      padding-left: 20px;
+      background-color: $primary-cl;
+      color: white;
+   }
+   &__list {
+      padding-inline: 8px;
+      width: 100%;
+      overflow-y: scroll;
+      overflow-x: hidden;
+      max-height: 500px;
+      @include customscroll(5px, transparent, #7c7c7c88);
+      &-item {
+         display: flex;
+         cursor: pointer;
+         flex-direction: column;
+         padding: 15px 12px;
+         margin-block: 8px;
+         @include transition(ease-out 0.3s);
+         box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.25);
+         &:hover {
+            background-color: $primary-27-cl;
+            @include transition(ease-out 0.3s);
+         }
+         .contentTop {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            padding-bottom: 10px;
+            & > div {
+               display: flex;
+               align-items: center;
+            }
+            &__avt {
+               position: relative;
+               overflow: hidden;
+               border-radius: 5px;
+               width: 22px;
+               height: 22px;
+               margin-right: 10px;
+               img {
+                  @include mid(false);
+                  min-width: 100%;
+                  min-height: 100%;
+                  object-fit: cover;
+               }
+            }
+            &__peopleSend {
+               font-family: GR-B;
+               font-size: 16px;
+               letter-spacing: -0.01em;
+            }
+            &__sendTime {
+               .value {
+                  margin-right: 3px;
+               }
+               .value,
+               span {
+                  font-family: GR;
+                  font-size: 12px;
+                  color: #666;
+               }
+            }
+            &::after {
+               position: absolute;
+               content: "";
+               width: 100%;
+               height: 0.3px;
+               background-color: #666;
+               box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.25);
+               opacity: 0.1;
+               bottom: 0;
+               left: 0;
+            }
+         }
+         .contentBottom {
+            font-size: 16px;
+            margin-top: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            .predicate {
+               font-family: GR-M;
+               letter-spacing: -0.01em;
+            }
+            .readBtn {
+               background-color: $primary2-cl;
+               width: 8px;
+               height: 8px;
+               border-radius: 50%;
+            }
+         }
+         .content {
+            width: 75%;
+            text-align: justify;
+            &-noti {
+               p {
+                  display: block;
+                  width: max-content;
+                  font-size: 15px;
+               }
+               .subject,
+               .time {
+                  font-family: GR-SB;
+                  margin-bottom: 8px;
+               }
+               .predicate {
+                  font-family: GR;
+                  margin-bottom: 8px;
+               }
+            }
+            .send-time {
+               font-family: GR;
+               font-size: 13px;
+               color: #666;
+               text-align: right;
+               p {
+                  display: inline;
+                  margin-right: 3px;
+               }
+            }
+         }
+      }
+   }
+}
